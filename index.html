@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      .content_video {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #video {
+        width: 100%;
+        z-index: 1;
+        border-radius: 20px;
+      }
+      .mask_layer {
+        position: absolute;
+        z-index: 2;
+        inset: 0;
+        background-color: aliceblue;
+        background-image: url("images/thiet-ke-thiep-cuoi.jpg");
+        background-repeat: repeat-y;
+        background-position: center;
+        background-size: contain;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #autoplay_btn {
+        margin-top: 6%;
+        font-size: 35px;
+        border-radius: 20px;
+        background-image: linear-gradient(
+          to right,
+          rgb(104, 5, 185),
+          rgb(255, 109, 231)
+        );
+        outline: none;
+        border: none;
+        transition: all 0.5s;
+      }
+      #autoplay_btn:hover {
+        transform: scale(0.9);
+      }
+      @media screen and (max-width: 1200px) {
+        #autoplay_btn {
+          font-size: 30px;
+        }
+      }
+      @media screen and (max-width: 920px) {
+        #autoplay_btn {
+          font-size: 20px;
+        }
+      }
+      @media screen and (max-width: 770px) {
+        #autoplay_btn {
+          font-size: 20px;
+        }
+      }
+      @media screen and (max-width: 570px) {
+        #autoplay_btn {
+          font-size: 15px;
+        }
+      }
+      .display_none {
+        display: none;
+      }
+      .background_image {
+        z-index: 0;
+        background-image: url("images/background-dep-1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        inset: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background_image"></div>
+    <div class="container">
+      <div class="content_video">
+        <video controls id="video">
+          <source
+            src="./Tâm Nguyễn & Joyce Phạm - Pre Wedding Film in Da Lat.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    </div>
+    <div class="mask_layer">
+      <button id="autoplay_btn" class="btn btn-success">Nhận Thiệp Cưới</button>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document
+        .querySelector("#autoplay_btn")
+        .addEventListener("click", function () {
+          document.querySelector("#video").play();
+          document.querySelector(".mask_layer").classList.add("display_none");
+        });
+    </script>
+  </body>
+</html>
